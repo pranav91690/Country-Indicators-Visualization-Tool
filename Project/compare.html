@@ -1,16 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<!-- Moment Js -->
-	<!-- ... -->
-	<script type="text/javascript" src="bower_components/jquery/jquery.min.js"></script>
-	<script type="text/javascript" src="bower_components/moment/min/moment.min.js"></script>
-	<script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
-	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
-	<link rel="stylesheet" href="bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
-
-
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -36,140 +26,166 @@
 			<div class="row">
 				<div class="col-md-4"></div>
 				<div class="col-md-4">
-					<h1 align="center">Compare</h1>
+					<h1 align="center">COMPARE</h1>
 				</div>
 			</div>
 		</div>
 	</div>
 
 	<!-- PLot Variables -->
-	<!--<div class="panel panel-default">
-	<div class="panel-body"> -->
-		<div class-"container">
-			<!-- Row 1 -->
-			<div class="row">
-				<div class="col-md-2" align="center"><h6>Plot</h6></div>
-				<div class="col-md-4" align="center">
-					<div class="dropdown">
-						<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
-							Indicator - X Axis
-							<span class="caret"></span>
-						</button>
-						<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-							<li role="presentation"><a role="menuitem" tabindex="-1" href="#">X Indicator1</a></li>
-							<li role="presentation"><a role="menuitem" tabindex="-1" href="#">X Indicator2</a></li>
-							<li role="presentation"><a role="menuitem" tabindex="-1" href="#">X Indicator3</a></li>
-							<li role="presentation"><a role="menuitem" tabindex="-1" href="#">X Indicator4</a></li>
-						</ul> 
-					</div>
-				</div>
-				<div class="col-md-2" align="center"><h6>VS</h6></div>
-				<div class="col-md-4" align="center">
-					<div class="dropdown">
-						<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-expanded="true">
-							Indicator - Y Axis
-							<span class="caret"></span>
-						</button>
-						<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu2">
-							<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Y Indicator1</a></li>
-							<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Y Indicator2</a></li>
-							<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Y Indicator3</a></li>
-							<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Y Indicator4</a></li>
-						</ul>
-					</div>
-				</div>
-			</div> <!-- Row 1 -->
-
-			<!-- Row 2 -->
-			<div class="row">
-				<div class="col-md-2" align="center"><h6>Countries</h6></div>
-				<div class="col-md-2" align="center">
-					<div class="dropdown">
-						<button class="btn btn-default dropdown-toggle" type="button" id="country1" data-toggle="dropdown" aria-expanded="true">
-							Country1
-							<span class="caret"></span>
-						</button>
-						<ul class="dropdown-menu" role="menu" aria-labelledby="country1">
-							<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Country1</a></li>
-							<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Country2</a></li>
-							<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Country3</a></li>
-							<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Country4</a></li>
-						</ul> 
-					</div>
-				</div>
-				<div class="col-md-2" align="center">
-					<div class="dropdown">
-						<button class="btn btn-default dropdown-toggle" type="button" id="country2" data-toggle="dropdown" aria-expanded="true">
-							Country2
-							<span class="caret"></span>
-						</button>
-						<ul class="dropdown-menu" role="menu" aria-labelledby="country2">
-							<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Country1</a></li>
-							<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Country2</a></li>
-							<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Country3</a></li>
-							<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Country4</a></li>
-						</ul> 
-					</div>
-				</div>
-				<div class="col-md-2" align="center">
-					<div class="dropdown">
-						<button class="btn btn-default dropdown-toggle" type="button" id="country3" data-toggle="dropdown" aria-expanded="true">
-							Country3
-							<span class="caret"></span>
-						</button>
-						<ul class="dropdown-menu" role="menu" aria-labelledby="country3">
-							<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Country1</a></li>
-							<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Country2</a></li>
-							<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Country3</a></li>
-							<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Country4</a></li>
-						</ul> 
-					</div>
-				</div>
-				<div class="col-md-2" align="center">
-					<div class="dropdown">
-						<button class="btn btn-default dropdown-toggle" type="button" id="country4" data-toggle="dropdown" aria-expanded="true">
-							Country4
-							<span class="caret"></span>
-						</button>
-						<ul class="dropdown-menu" role="menu" aria-labelledby="country4">
-							<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Country1</a></li>
-							<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Country2</a></li>
-							<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Country3</a></li>
-							<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Country4</a></li>
-						</ul> 
-					</div>
-				</div>
-			</div> <!-- Row 2 -->
-
-			<!-- Row 3  - TimeLines -->
-			<div class="row">
-				<div class="col-md-3" align="center">Start Year</div>
-				<div class="col-md-3" align="center">
-					<div class="form-group">
-						<div class="input-group date" id="datetimepicker1">
-							<input type="text" class="form-control" />
-							<span class="input-group-addon">
-								<span class="glyphicon glyphicon-calendar"></span>
-							</span>
-						</div>
-					</div>
-				</div>
-				<script type="text/javascript">
-				$(function () {
-					$('#datetimepicker1').datetimepicker();
-				});
-				</script>
-				<div class="col-md-3" align="center">End Year</div>
-				<div class="col-md-3" align="center">
-					<input type="datetime" class="form-control" id="endyear">
+	<div class-"container">
+		<!-- Row 1 -->
+		<div class="row">
+			<div class="col-md-2" align="center"><h6>Plot</h6></div>
+			<div class="col-md-4" align="center">
+				<div class="dropdown">
+					<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+						Indicator - X Axis
+						<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+						<li role="presentation"><a role="menuitem" tabindex="-1" href="#">X Indicator1</a></li>
+						<li role="presentation"><a role="menuitem" tabindex="-1" href="#">X Indicator2</a></li>
+						<li role="presentation"><a role="menuitem" tabindex="-1" href="#">X Indicator3</a></li>
+						<li role="presentation"><a role="menuitem" tabindex="-1" href="#">X Indicator4</a></li>
+					</ul> 
 				</div>
 			</div>
-		</div> <!-- Container -->
-		<!--</div> --> <!-- Panel Body -->
-		<!--</div> --><!--Panel Parent -->
+			<div class="col-md-2" align="center"><h6>VS</h6></div>
+			<div class="col-md-4" align="center">
+				<div class="dropdown">
+					<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-expanded="true">
+						Indicator - Y Axis
+						<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu2">
+						<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Y Indicator1</a></li>
+						<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Y Indicator2</a></li>
+						<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Y Indicator3</a></li>
+						<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Y Indicator4</a></li>
+					</ul>
+				</div>
+			</div>
+		</div> <!-- Row 1 -->
 
-		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-		<!-- Include all compiled plugins (below), or include individual files as needed -->
-		<script src="js/bootstrap.min.js"></script>
-	</body>
+		<!-- Row 2 -->
+		<div class="row">
+			<div class="col-md-2" align="center"><h6>Countries</h6></div>
+			<div class="col-md-2" align="center">
+				<div class="dropdown">
+					<button class="btn btn-default dropdown-toggle" type="button" id="country1" data-toggle="dropdown" aria-expanded="true">
+						Country1
+						<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu" role="menu" aria-labelledby="country1">
+						<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Country1</a></li>
+						<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Country2</a></li>
+						<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Country3</a></li>
+						<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Country4</a></li>
+					</ul> 
+				</div>
+			</div>
+			<div class="col-md-2" align="center">
+				<div class="dropdown">
+					<button class="btn btn-default dropdown-toggle" type="button" id="country2" data-toggle="dropdown" aria-expanded="true">
+						Country2
+						<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu" role="menu" aria-labelledby="country2">
+						<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Country1</a></li>
+						<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Country2</a></li>
+						<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Country3</a></li>
+						<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Country4</a></li>
+					</ul> 
+				</div>
+			</div>
+			<div class="col-md-2" align="center">
+				<div class="dropdown">
+					<button class="btn btn-default dropdown-toggle" type="button" id="country3" data-toggle="dropdown" aria-expanded="true">
+						Country3
+						<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu" role="menu" aria-labelledby="country3">
+						<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Country1</a></li>
+						<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Country2</a></li>
+						<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Country3</a></li>
+						<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Country4</a></li>
+					</ul> 
+				</div>
+			</div>
+			<div class="col-md-2" align="center">
+				<div class="dropdown">
+					<button class="btn btn-default dropdown-toggle" type="button" id="country4" data-toggle="dropdown" aria-expanded="true">
+						Country4
+						<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu" role="menu" aria-labelledby="country4">
+						<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Country1</a></li>
+						<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Country2</a></li>
+						<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Country3</a></li>
+						<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Country4</a></li>
+					</ul> 
+				</div>
+			</div>
+		</div> <!-- Row 2 -->
+
+		<!-- Row 3  - TimeLines -->
+		<div class="row">
+			<div class="col-md-3" align="center">Start Year</div>
+			<div class="col-md-3" align="center">
+				<div class="form-group">
+					<div class="input-group date" id="datetimepicker1">
+						<input type="text" class="form-control" />
+						<span class="input-group-addon">
+							<span class="glyphicon glyphicon-calendar"></span>
+						</span>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3" align="center">End Year</div>
+			<div class="col-md-3" align="center">
+				<div class="form-group">
+					<div class="input-group date" id="datetimepicker2">
+						<input type="text" class="form-control" />
+						<span class="input-group-addon">
+							<span class="glyphicon glyphicon-calendar"></span>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div> <!-- Container -->
+
+	<!-- Go Button to Fetch the Results -->
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-4"></div>
+			<div class="col-md-4">
+				<button type = "button" class = "btn btn-primary btn-lg btn-block" id ="go"> GO </button>
+			</div>
+		</div>
+	</div>
+	
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/bootstrap.min.js"></script>
+
+	<!-- Moment Js -->
+	<!-- ... -->
+	<script type="text/javascript" src="bower_components/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="bower_components/moment/min/moment.min.js"></script>
+	<script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
+
+
+	<script type="text/javascript">
+	$(function () {
+		$('#datetimepicker1').datetimepicker({format : 'MM/DD/YYYY'});
+		$('#datetimepicker2').datetimepicker({format : 'MM/DD/YYYY'});
+	});
+	</script>
+</body>
