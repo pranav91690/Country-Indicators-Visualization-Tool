@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="utf-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+ <!-- Bootstrap -->
+ <link href="css/bootstrap.min.css" rel="stylesheet">
+
+ <!-- Page Title -->
+ <title>List Page</title>
+</head>
+
+<body>
+    <!-- Title Code -->
+    <div class="jumbotron">
+        <div class="contaner-fluid">
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <h1 align="center">List</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- DropDowns for Selection -->
+    <div class ="panel panel-default">
+        <div class="panel-body">
+            <div class="dropdown">
+                <div class="container-fluid">
+                    <!-- Row1 -->
+                    <div class="panel panel-defualt">
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-2"></div>
+                                <div class="col-md-8">
+                                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+                                        Sub Region
+                                        <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Sub Region1</a></li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Sub Region2</a></li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Sub Region3</a></li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Sub Region4</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Row2 -->
+                    <div class="panel panel-defualt">
+                        <div class="panel-body">                   
+                            <div class="row">
+                                <div class="col-md-2"></div>
+                                <!-- Indicator 1 -->
+                                <div class="col-md-3">
+                                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-expanded="true">
+                                        Indicator
+                                        <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu2">
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Indicator1</a></li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Indicator2</a></li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Indicator3</a></li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Indicator4</a></li>
+                                    </ul>
+                                </div>
+
+                                <!-- Criterion 1 -->
+                                <div class="col-md-3">
+                                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-expanded="true">
+                                        Criterion
+                                        <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu3">
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Equals</a></li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Less Than</a></li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Greater Than</a></li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Not Equal To</a></li>
+                                    </ul>
+                                </div>
+
+                                <!-- Value 1 -->
+                                <div class="col-md-3">
+                                    <input class="form-control" id="InputValue1" placeholder="Enter Value">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Other Rows to Follow -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Go Button to Fetch the Results -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <button type = "button" class = "btn btn-primary btn-lg btn-block" id ="go"> GO </button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+</body>
