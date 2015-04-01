@@ -73,9 +73,23 @@
 					text: 'IndicatorY'
 				}
 			},
+			plotOptions: {
+				line: {
+					dataLabels: {
+						enabled:true,
+						formatter:function(){
+							return this.point.name;
+						}
+					}
+				}
+			},
 			series: [{
 				name: "Country1",
-				data: [[1,4],[2,8],[300, 4]]
+				data: [{x:1,y:4,name:'2004'},{x:2,y:8,name:'2005'},{x:5,y:4,name:'2006'}]
+			},
+			{
+				name: "Country2",
+				data: [{x:1,y:7,name:'2004'},{x:2,y:19,name:'2005'},{x:5,y:23,name:'2006'}],
 			}]
 		});
 	});
