@@ -1,46 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
- <meta charset="utf-8">
- <meta http-equiv="X-UA-Compatible" content="IE=edge">
- <meta name="viewport" content="width=device-width, initial-scale=1">
- <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
- <!-- Bootstrap -->
- <link href="css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
- <!-- Page Title -->
- <title>List Page</title>
+    <!-- Page Title -->
+    <title>List Page</title>
 
- <style>
- .row{
-    padding: 15px;
- }
- </style>
+    <style>
+    .breadcrumb{
+        background-color: rgb(238,238,238);
+    }
+    </style>
 </head>
 
 <body>
     <!-- Title Code -->
     <div class="jumbotron">
-        <div class="contaner-fluid">
-            <div class="row">
-                <div class="col-md-4"></div>
-                <div class="col-md-4">
-                    <h1 align="center">LIST</h1>
-                </div>
+        <!-- BreadCrumbs -->
+        <ol class="breadcrumb">
+            <li><a href="homepage.html">Home</a></li>
+            <li class="active">List</li>
+        </ol>
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <h1 align="center">LIST</h1>
             </div>
         </div>
     </div>
 
     <!-- DropDowns for Selection -->
-    <div class="container-fluid">
+    <form class="form-horizontal">
         <!-- Row1 -->
-        <div class="row">
+        <div class="form-group">
             <div class="col-md-2"></div>
-            <div class="col-md-8">
-                <div class="dropdown">
-                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
-                        Sub Region
-                        <span class="caret"></span>
+            <div class="col-md-4">
+                <div class="btn-group">
+                    <button class="btn btn-default dropdown-toggle form-control" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+                        <!-- Sub Region -->
+                        <span data-bind="label">Sub Region</span>&nbsp;<span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
                         <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Sub Region1</a></li>
@@ -53,14 +56,14 @@
         </div>
 
         <!-- Row2 -->                  
-        <div class="row">
+        <div class="form-group">
             <div class="col-md-2"></div>
             <!-- Indicator 1 -->
             <div class="col-md-3">
-                <div class="dropdown">
-                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-expanded="true">
-                        Indicator
-                        <span class="caret"></span>
+                <div class="btn-group">
+                    <button class="btn btn-default dropdown-toggle form-control" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-expanded="true">
+                        <!-- Indicator -->
+                        <span data-bind="label">Indicator</span>&nbsp;<span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu2">
                         <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Indicator1</a></li>
@@ -73,10 +76,10 @@
 
             <!-- Criterion 1 -->
             <div class="col-md-3">
-                <div class="dropdown">
-                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-expanded="true">
-                        Criterion
-                        <span class="caret"></span>
+                <div class="btn-group">
+                    <button class="btn btn-default dropdown-toggle form-control" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-expanded="true">
+                        <!-- Criterion -->
+                        <span data-bind="label">Criterion</span>&nbsp;<span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu3">
                         <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Equals</a></li>
@@ -92,15 +95,41 @@
                 <input class="form-control" id="InputValue1" placeholder="Enter Value">
             </div>
         </div>
-    </div>
 
-    <!-- Other Rows to Follow -->
+        <!-- Other Rows to Follow -->
+        <!-- Row - TimeLines -->
+        <div class="form-group">
+            <div class="col-md-2"></div>
+            <div class="col-md-1" align="center"><label for="startyear" class="control-label">Start Year</label></div>
+            <div class="col-md-3" align="center">
+                <!-- <div class="form-group"> -->
+                <div class="input-group date" id="datetimepicker1">
+                    <input type="text" class="form-control" id="startyear"/>
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+                <!-- </div> -->
+            </div>
+            <div class="col-md-1" align="center"><label for="endyear" class="control-label">End Year</label></div>
+            <div class="col-md-3" align="center">
+                <!-- <div class="form-group"> -->
+                <div class="input-group date" id="datetimepicker2">
+                    <input type="text" class="form-control" id="endyear"/>
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+                <!-- </div> -->
+            </div>
+        </div>
+    </form>
 
 
     <!-- Go Button to Fetch the Results -->
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-4"></div>
+            <div class="col-md-2"></div>
             <div class="col-md-4">
                 <button type = "button" class = "btn btn-primary btn-lg btn-block" id ="go"> GO </button>
             </div>
@@ -112,4 +141,31 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+
+    <!-- Moment Js -->
+    <!-- ... -->
+    <script type="text/javascript" src="bower_components/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="bower_components/moment/min/moment.min.js"></script>
+    <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
+
+
+    <script type="text/javascript">
+    $(function () {
+        $('#datetimepicker1').datetimepicker({format : 'MM/DD/YYYY'});
+        $('#datetimepicker2').datetimepicker({format : 'MM/DD/YYYY'});
+    });
+
+    $(document.body).on('click','.dropdown-menu li',function(event) {
+        var $target = $( event.currentTarget );
+
+        $target.closest( '.btn-group' ).find( '[data-bind="label"]' ).text( $target.text() )
+        .end()
+        .children( '.dropdown-toggle' ).dropdown( 'toggle' );
+
+        return false;
+    });
+    </script>
 </body>

@@ -30,20 +30,41 @@
 	thead{
 		width: 100%;
 	}
+
+	.breadcrumb{
+		background-color: rgb(238,238,238);
+	}
 	</style>
 </head>
 
 <body>
 	<!-- Main Body -->
 	<div class = "jumbotron">
-		<h1 align="center">HOME</h1>
-		<h2>Desciption</h2>
-		<p>	
-			This is a data analysis tool, based on the data maintained by the World Bank 
-			about the various metrics of all the countries in the world. There are 
-			various data indicators that can cross-analyzed 
-			over a various years to get a insight into the various trends.
-		</p>
+		<!-- BreadCrumbs -->
+		<ol class="breadcrumb">
+			<li class="active"><a href="homepage.html">Home</a></li>
+		</ol>
+		<div class="row">
+			<div class="col-md-4"></div>
+			<div class="col-md-4">
+				<h1 align="center">HOME</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-3">
+				<h2>Desciption</h2>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<p>	
+					This is a data analysis tool, based on the data maintained by the World Bank 
+					about the various metrics of all the countries in the world. There are 
+					various data indicators that can cross-analyzed 
+					over a various years to get a insight into the various trends.
+				</p>
+			</div>
+		</div>
 	</div>
 
 	<div class = "container-fluid">

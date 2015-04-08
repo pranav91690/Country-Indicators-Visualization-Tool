@@ -1,17 +1,59 @@
 <!DOCTYPE html>
 <html>
 <head>
-  	<meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<!-- Bootstrap -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Page Title -->
-    <title>List Output Page</title>
+	<!-- Page Title -->
+	<title>List Output Page</title>
+
+	<style>
+	table{
+		height: 400px;
+	}
+	</style>
 </head>
 
 <body>
-    <p> Test </p>
+	<!-- Title Code -->
+	<div class="jumbotron">
+		<div class="contaner-fluid">
+			<div class="row">
+				<div class="col-md-4"></div>
+				<div class="col-md-4">
+					<h1 align="center">LIST OUTPUT</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Table Container for Storing the List Result -->
+	<div class="container">
+		<div class="table-responsive">
+			<table class="table table-hover">
+				<thead></thead>
+				<tbody></tbody>
+			</table>
+		</div>
+	</div>
+
+	<!-- Save and Share Buttons to Fetch the Results -->
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-6" align="center">
+				<button type = "button" class = "btn btn-primary btn-lg" id ="save"> SAVE </button>
+			</div>
+			<div class="col-md-6" align="center">
+				<button type = "button" class = "btn btn-primary btn-lg" id ="share"> SHARE </button>
+			</div>
+		</div>
+	</div>
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/bootstrap.min.js"></script>
 </body>

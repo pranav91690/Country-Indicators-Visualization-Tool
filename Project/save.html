@@ -1,17 +1,86 @@
 <!DOCTYPE html>
 <html>
 <head>
-  	<meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<!-- Bootstrap -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Page Title -->
-    <title>Saved Query</title>
+	<!-- Page Title -->
+	<title>Saved Query</title>
+
+	<style>
+	.breadcrumb{
+		background-color: rgb(238,238,238);
+	}
+	</style>
 </head>
 
 <body>
-    <p> Test </p>
+	<!-- Title Code -->
+	<div class="jumbotron">	
+		<!-- BreadCrumbs -->
+		<ol class="breadcrumb">
+			<li><a href="homepage.html">Home</a></li>
+			<li class="active">Save</li>
+		</ol>
+		<div class="row">
+			<div class="col-md-4"></div>
+			<div class="col-md-4">
+				<h1 align="center" id="title">Save The Result</h1>
+			</div>
+		</div>
+	</div>
+
+	<!-- Form to Enter the Query Information --> 
+	<form class="form-horizontal">
+		<div class="form-group">
+			<div class="col-md-2"></div>
+			<div class="col-md-2" align="left">
+				<label for="name" class="control-label"> Name</label> 
+			</div>
+			<div class="col-md-6" align="left">
+				<input class="form-control" id="name" placeholder="Enter Name">
+			</div>
+			<div class="col-md-2"></div>
+		</div>
+		<div class="form-group">
+			<div class="col-md-2"></div>
+			<div class="col-md-2" align="left">
+				<label for="query" class="control-label"> Query Name</label> 
+			</div>
+			<div class="col-md-6" align="left">
+				<input class="form-control" id="query" placeholder="Enter Query Name">
+			</div>
+			<div class="col-md-2"></div>
+		</div>
+		<div class="form-group">
+			<div class="col-md-2"></div>
+			<div class="col-md-2" align="left">
+				<label for="desc" class="control-label">Description</label> 
+			</div>
+			<div class="col-md-6" align="left">
+				<textarea class="form-control" rows="6" id="desc" placeholder="Enter Description"></textarea>
+			</div>
+			<div class="col-md-2"></div>
+		</div>
+	</form>
+
+	<!-- Go Button to Fetch the Results -->
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-4"></div>
+			<div class="col-md-4">
+				<button type = "button" class = "btn btn-primary btn-lg btn-block" id ="save"> SAVE </button>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/bootstrap.min.js"></script>
 </body>
