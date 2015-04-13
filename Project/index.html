@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<!-- Bootstrap -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- Page Title -->
+	<title>DBMS Project</title>
+
+	<!-- Scrollable Tables -->
+	<style>
+	table {
+		height: 200px;
+	}
+	tr {
+		width: 100%;
+		display: inline-table;
+	}
+	tbody{
+		width: 100%;
+		overflow-y: scroll;
+		height: 200px;
+		position: absolute;
+	}
+
+	thead{
+		width: 100%;
+	}
+
+	.breadcrumb{
+		background-color: rgb(238,238,238);
+	}
+	</style>
+</head>
+
+<body>
+	<!-- Main Body -->
+	<div class = "jumbotron">
+		<!-- BreadCrumbs -->
+		<ol class="breadcrumb">
+			<li class="active"><a href="homepage.html">Home</a></li>
+		</ol>
+		<div class="row">
+			<div class="col-md-4"></div>
+			<div class="col-md-4">
+				<h1 align="center">HOME</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-3">
+				<h2>Desciption</h2>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<p>	
+					This is a data analysis tool, based on the data maintained by the World Bank 
+					about the various metrics of all the countries in the world. There are 
+					various data indicators that can cross-analyzed 
+					over a various years to get a insight into the various trends.
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<div class = "container-fluid">
+		<div class="row">
+			<div class="col-md-6">
+				<h5 align="left">Example Queries</h5> 
+			</div>
+			<div class="col-md-6">
+				<!-- Tab Between List and Compare Entries -->
+				<h5 align="left">Saved Queries</h5> 
+				<div class="Saved-Entries">
+					<ul class="nav nav-tabs">
+						<li class="active">
+							<a data-toggle="tab" href="#list">List</a>
+						</li>
+						<li>
+							<a data-toggle="tab" href="#compare">Compare</a>
+						</li>
+					</ul>
+					<div class="tab-content">
+						<div id="list" class="tab-pane fade in active">
+							<div class="table-reponsive">
+								<table class="table table-hover">
+									<thead>
+										<tr>
+											<th>Row</th>
+											<th>Entry Name</th>
+											<th>Created By</th>
+											<th>Email</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>1</td>
+											<td>Saved Entry #1</td>
+											<td>Pranav</td>
+											<td>pranav@mail.com</td>
+										</tr>
+										<tr>
+											<td>2</td>
+											<td>Saved Entry #2</td>
+											<td>Shilpa</td>
+											<td>shilpa@mail.com</td>
+										</tr>
+										<tr>
+											<td>3</td>
+											<td>Saved Entry #3</td>
+											<td>Ganga</td>
+											<td>ganga@mail.com</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div><!-- List Tab -->
+						<div id="compare" class="tab-pane fade">
+							<table class="table table-hover">
+								<thead>
+									<tr>
+										<th>Row</th>
+										<th>Entry Name</th>
+										<th>Created By</th>
+										<th>Email</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>1</td>
+										<td>Saved Entry #1</td>
+										<td>Sudeep</td>
+										<td>pranav@mail.com</td>
+									</tr>
+									<tr>
+										<td>2</td>
+										<td>Saved Entry #2</td>
+										<td>Sandeep</td>
+										<td>shilpa@mail.com</td>
+									</tr>
+									<tr>
+										<td>3</td>
+										<td>Saved Entry #3</td>
+										<td>Rahane</td>
+										<td>ganga@mail.com</td>
+									</tr>
+								</tbody>
+							</table>
+						</div><!-- Compare Tab -->
+					</div><!-- End of Tab Content -->
+				</div><!-- End of Saved Entries Class -->
+			</div><!-- End of Saved Queries Layout Part -->
+		</div>
+	</div>
+
+	<div class = "container-fluid">
+		<div class="row">
+			<div class="col-md-4">
+			</div>
+			<div class="col-md-4">
+				<button type = "button" class = "btn btn-primary" id ="list"> List </button>
+				<button type = "button" class = "btn btn-primary" id ="compare"> Compare </button>
+				<button type = "button" class = "btn btn-primary" id ="countries"> Countries at a Glance</button>
+			</div>
+		</div>
+	</div>
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/bootstrap.min.js"></script>
+
+	<!-- Individual JS Code -->
+	<script type="text/javascript">
+	document.getElementById("list").onclick=function() {
+		location.href = "list.html"
+	}
+
+	document.getElementById("compare").onclick=function() {
+		location.href = "compare.html"
+	}
+
+	document.getElementById("countries").onclick=function() {
+		location.href = "selectcountries.html"
+	}
+	</script>
+</body>
+
+</html>
