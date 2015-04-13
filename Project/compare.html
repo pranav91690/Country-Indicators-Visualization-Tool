@@ -13,9 +13,9 @@
 
 	<!-- Styling for Row Classes -->
 	<style>
-	.row{
+	/*.row{
 		padding: 15px;
-	}
+	}*/
 	
 	}
 	.breadcrumb{
@@ -42,15 +42,16 @@
 	
 
 	<!-- PLot Variables -->
-	<div class-"container">
+	<form class="form-horizontal" action="compareoutput.php" method="post">
+	<!-- <div class-"container"> -->
 		<!-- Row 1 -->
-		<div class="row">
+		<div class="form-group">
 			<div class="col-md-2" align="center"><h6>Plot</h6></div>
-			<div class="col-md-4" align="center">
-				<div class="dropdown">
-					<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
-						Indicator - X Axis
-						<span class="caret"></span>
+			<div class="col-md-4">
+				<div class="btn-group">
+					<button class="btn btn-default dropdown-toggle form-control" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+						<!-- Indicator - X Axis -->
+						<span data-bind="label">Indicator - X Axis</span>&nbsp;<span class="caret"></span>
 					</button>
 					<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
 						<li role="presentation"><a role="menuitem" tabindex="-1" href="#">X Indicator1</a></li>
@@ -62,10 +63,10 @@
 			</div>
 			<div class="col-md-2" align="center"><h6>VS</h6></div>
 			<div class="col-md-4" align="center">
-				<div class="dropdown">
-					<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-expanded="true">
-						Indicator - Y Axis
-						<span class="caret"></span>
+				<div class="btn-group">
+					<button class="btn btn-default dropdown-toggle form-control" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-expanded="true">
+						<!-- Indicator - Y Axis -->
+						<span data-bind="label"> Indicator - Y Axis</span>&nbsp;<span class="caret"></span>
 					</button>
 					<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu2">
 						<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Y Indicator1</a></li>
@@ -78,13 +79,13 @@
 		</div> <!-- Row 1 -->
 
 		<!-- Row 2 -->
-		<div class="row">
+		<div class="form-group">
 			<div class="col-md-2" align="center"><h6>Countries</h6></div>
 			<div class="col-md-2" align="center">
-				<div class="dropdown">
-					<button class="btn btn-default dropdown-toggle" type="button" id="country1" data-toggle="dropdown" aria-expanded="true">
-						Country1
-						<span class="caret"></span>
+				<div class="btn-group">
+					<button class="btn btn-default dropdown-toggle form-control" type="button" id="country1" data-toggle="dropdown" aria-expanded="true">
+						<!-- Country1 -->
+						<span data-bind="label">Country 1</span>&nbsp;<span class="caret"></span>
 					</button>
 					<ul class="dropdown-menu" role="menu" aria-labelledby="country1">
 						<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Country1</a></li>
@@ -95,10 +96,10 @@
 				</div>
 			</div>
 			<div class="col-md-2" align="center">
-				<div class="dropdown">
+				<div class="btn-group">
 					<button class="btn btn-default dropdown-toggle" type="button" id="country2" data-toggle="dropdown" aria-expanded="true">
-						Country2
-						<span class="caret"></span>
+						<!-- Country2 -->
+						<span data-bind="label">Country 2</span>&nbsp;<span class="caret"></span>
 					</button>
 					<ul class="dropdown-menu" role="menu" aria-labelledby="country2">
 						<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Country1</a></li>
@@ -109,10 +110,10 @@
 				</div>
 			</div>
 			<div class="col-md-2" align="center">
-				<div class="dropdown">
+				<div class="btn-group">
 					<button class="btn btn-default dropdown-toggle" type="button" id="country3" data-toggle="dropdown" aria-expanded="true">
-						Country3
-						<span class="caret"></span>
+						<!-- Country3 -->
+						<span data-bind="label">Country 3</span>&nbsp;<span class="caret"></span>
 					</button>
 					<ul class="dropdown-menu" role="menu" aria-labelledby="country3">
 						<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Country1</a></li>
@@ -123,10 +124,10 @@
 				</div>
 			</div>
 			<div class="col-md-2" align="center">
-				<div class="dropdown">
+				<div class="btn-group">
 					<button class="btn btn-default dropdown-toggle" type="button" id="country4" data-toggle="dropdown" aria-expanded="true">
-						Country4
-						<span class="caret"></span>
+						<!-- Country4 -->
+						<span data-bind="label">Country 4</span>&nbsp;<span class="caret"></span>
 					</button>
 					<ul class="dropdown-menu" role="menu" aria-labelledby="country4">
 						<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Country1</a></li>
@@ -139,41 +140,49 @@
 		</div> <!-- Row 2 -->
 
 		<!-- Row 3  - TimeLines -->
-		<div class="row">
-			<div class="col-md-3" align="center">Start Year</div>
-			<div class="col-md-3" align="center">
-				<div class="form-group">
-					<div class="input-group date" id="datetimepicker1">
-						<input type="text" class="form-control" />
-						<span class="input-group-addon">
-							<span class="glyphicon glyphicon-calendar"></span>
-						</span>
-					</div>
-				</div>
+        <div class="form-group">
+            <div class="col-md-2"></div>
+            <div class="col-md-1" align="center"><label for="startyear" class="control-label">Start Year</label></div>
+            <div class="col-md-3" align="center">
+                <!-- <div class="form-group"> -->
+                <div class="input-group date" id="datetimepicker1">
+                    <input type="text" class="form-control" id="startyear"/>
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+                <!-- </div> -->
+            </div>
+            <div class="col-md-1" align="center"><label for="endyear" class="control-label">End Year</label></div>
+            <div class="col-md-3" align="center">
+                <!-- <div class="form-group"> -->
+                <div class="input-group date" id="datetimepicker2">
+                    <input type="text" class="form-control" id="endyear"/>
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+                <!-- </div> -->
+            </div>
+        </div>
+
+        <div class="form-group">
+			<div class="col-md-4"></div>
+			<div class="col-md-4">
+				<button type = "submit" class = "btn btn-primary btn-lg btn-block" id ="go"> GO </button>
 			</div>
-			<div class="col-md-3" align="center">End Year</div>
-			<div class="col-md-3" align="center">
-				<div class="form-group">
-					<div class="input-group date" id="datetimepicker2">
-						<input type="text" class="form-control" />
-						<span class="input-group-addon">
-							<span class="glyphicon glyphicon-calendar"></span>
-						</span>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div> <!-- Container -->
+        </div>
+	</form> <!-- Container -->
 
 	<!-- Go Button to Fetch the Results -->
-	<div class="container-fluid">
+<!-- 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-4"></div>
 			<div class="col-md-4">
 				<button type = "button" class = "btn btn-primary btn-lg btn-block" id ="go"> GO </button>
 			</div>
 		</div>
-	</div>
+	</div> -->
 	
 
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -196,5 +205,15 @@
 		$('#datetimepicker1').datetimepicker({format : 'MM/DD/YYYY'});
 		$('#datetimepicker2').datetimepicker({format : 'MM/DD/YYYY'});
 	});
+
+    $(document.body).on('click','.dropdown-menu li',function(event) {
+        var $target = $( event.currentTarget );
+
+        $target.closest( '.btn-group' ).find( '[data-bind="label"]' ).text( $target.text() )
+        .end()
+        .children( '.dropdown-toggle' ).dropdown( 'toggle' );
+
+        return false;
+    });
 	</script>
 </body>
