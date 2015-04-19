@@ -28,6 +28,11 @@ $('#correlationform').submit(function(event) {
     })
         // using the done promise callback
     .done(function(data) {
+            alert("Reaches Here");
+            alert(JSON.parse(data));
+            // jQuery.each(data,function(){
+            //     alert(data.actualdata);
+            // });
             // handle the returned data here
             $('#ajax').highcharts({
                 chart: {

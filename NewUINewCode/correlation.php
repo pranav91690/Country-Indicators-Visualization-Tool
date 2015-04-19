@@ -3,6 +3,7 @@
 
 $errors         = array();      // array to hold validation errors
 $data           = array();      // array to pass back data
+$actualdata     = array();
 
 // validate the variables ======================================================
     // if any of these variables don't exist, add an error to our $errors array
@@ -27,7 +28,10 @@ $data           = array();      // array to pass back data
     } else {
 
         // if there are no errors process our form, then return a message
-
+        array_push($actualdata, "message1", "message2", "message3");
+        $data['success'] = false;
+        $data['errors']  = $errors;
+        $data['actualdata'] = $actualdata;
         // DO ALL YOUR FORM PROCESSING HERE
         // THIS CAN BE WHATEVER YOU WANT TO DO (LOGIN, SAVE, UPDATE, WHATEVER)
 
