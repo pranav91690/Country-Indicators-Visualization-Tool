@@ -29,73 +29,65 @@ $.ajax({
     // using the done promise callback
     .done(function(data) {
         // handle the returned data here
-            var categories = ['0-4', '5-9', '10-14', '15-19',
-            '20-24', '25-29', '30-34', '35-39', '40-44',
-            '45-49', '50-54', '55-59', '60-64', '65-69',
-            '70-74', '75-79', '80-84', '85-89', '90-94',
-            '95-99', '100 + '];
-
-            $('#ajax').highcharts({
-                chart: {
-                    type: 'bar'
-                },
-                title: {
-                    text: 'Population pyramid for Germany, midyear 2010'
-                },
-                subtitle: {
-                    text: 'Source: www.census.gov'
-                },
-                xAxis: [{
-                    categories: categories,
-                    reversed: false,
-                    labels: {
-                        step: 1
-                    }
-        }, { // mirror axis on right side
-            opposite: true,
-            reversed: false,
-            categories: categories,
-            linkedTo: 0,
-            labels: {
-                step: 1
-            }
-        }],
-        yAxis: {
+    $('#ajax').highcharts({
+        chart: {
+            type: 'bar'
+        },
+        title: {
+            text: 'Historic World Population by Region'
+        },
+        subtitle: {
+            text: 'Source: Wikipedia.org'
+        },
+        xAxis: {
+            categories: ['Africa', 'America', 'Asia', 'Europe', 'Oceania'],
             title: {
                 text: null
+            }
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Population (millions)',
+                align: 'high'
             },
             labels: {
-                formatter: function () {
-                    return (Math.abs(this.value) / 1000000) + 'M';
-                }
-            },
-            min: -4000000,
-            max: 4000000
-        },
-
-        plotOptions: {
-            series: {
-                stacking: 'normal'
+                overflow: 'justify'
             }
         },
-
         tooltip: {
-            formatter: function () {
-                return '<b>' + this.series.name + ', age ' + this.point.category + '</b><br/>' +
-                'Population: ' + Highcharts.numberFormat(Math.abs(this.point.y), 0);
+            valueSuffix: ' millions'
+        },
+        plotOptions: {
+            bar: {
+                dataLabels: {
+                    enabled: true
+                }
             }
         },
-
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'top',
+            x: -40,
+            y: 100,
+            floating: true,
+            borderWidth: 1,
+            backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
+            shadow: true
+        },
+        credits: {
+            enabled: false
+        },
         series: [{
-            name: 'Male',
-            data: [-1746181, -1884428, -2089758, -2222362, -2537431, -2507081, -2443179,
-            -2664537, -3556505, -3680231, -3143062, -2721122, -2229181, -2227768,
-            -2176300, -1329968, -836804, -354784, -90569, -28367, -3878]
+            name: 'Year 1800',
+            data: [107, 31, 635, 203, 2]
         }, {
-            name: 'Female',
-            data: [1656154, 1787564, 1981671, 2108575, 2403438, 2366003, 2301402, 2519874,
-            3360596, 3493473, 3050775, 2759560, 2304444, 2426504, 2568938, 1785638,
-            1447162, 1005011, 330870, 130632, 21208]
+            name: 'Year 1900',
+            data: [133, 156, 947, 408, 6]
+        }, {
+            name: 'Year 2008',
+            data: [973, 914, 4054, 732, 34]
         }]
     });
 
