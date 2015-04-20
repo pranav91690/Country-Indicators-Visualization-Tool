@@ -32,7 +32,7 @@ $('#correlationform').submit(function(event) {
     })
         // using the done promise callback
     .done(function(data) {
-        alert("Reaches JS File");
+        
         if (! data.success){
             if (data.errors.topic1) {
                 $('#topic1group').addClass('has-error'); // add the error class to show red input
@@ -90,13 +90,53 @@ $('#correlationform').submit(function(event) {
             }            
         }
         else {
-            alert(data.actualdata.table1);
-            // alert(data.actualdata.table2);
-            // alert("Comes Back from PHP");
             
-            var country1 = [{x:1,y:4,name:'2004'},{x:2,y:8,name:'2005'},{x:5,y:4,name:'2006'}];
-            var country2 = [{x:1,y:6,name:'2004'},{x:2,y:7,name:'2005'},{x:5,y:13,name:'2006'}];
-            // handle the returned data here
+            // Process Data:
+            var country1 = []; // Country 1 Data
+            var country2 = [];
+            var country3 = [];
+            var country4 = [];
+            var country5 = [];
+
+            var c1x = data.actualdata.country1.xind; // Country1 X Data
+            var c2x = data.actualdata.country2.xind;
+            var c3x = data.actualdata.country3.xind;
+            var c4x = data.actualdata.country4.xind;
+            var c5x = data.actualdata.country5.xind;
+
+            var c1y = data.actualdata.country1.yind; // Country 1 Y Data
+            var c2y = data.actualdata.country2.yind;
+            var c3y = data.actualdata.country3.yind;
+            var c4y = data.actualdata.country4.yind;
+            var c5y = data.actualdata.country5.yind;
+
+            
+            // Country1
+            for (var k=0; k<c1x.length; k++){
+                country1[k] = {x: Number(c1x[k]),y: Number(c1y[k])};// name: '1990'};//,name:'1990'};//$('#eyear').val()+k};
+            }
+            
+            // Country2
+            for (var k=0; k<c1x.length; k++){
+                country2[k] = {x: Number(c2x[k]),y: Number(c2y[k])};// name: '1990'};//,name:'1990'};//$('#eyear').val()+k};
+            }
+
+            // Country3
+            for (var k=0; k<c1x.length; k++){
+                country3[k] = {x: Number(c3x[k]),y: Number(c3y[k])};//,name:'1990'};//$('#eyear').val()+k};
+            }
+
+            // Country4
+            for (var k=0; k<c1x.length; k++){
+                country4[k] = {x: Number(c4x[k]),y: Number(c4y[k])};//,name:'1990'};//$('#eyear').val()+k};
+            }
+
+            // COuntry5
+            for (var k=0; k<c1x.length; k++){
+                country5[k] = {x: Number(c5x[k]),y: Number(c5y[k])};//,name:'1990'};//$('#eyear').val()+k};
+            }
+            
+            //handle the returned data here
             $('#ajax').highcharts({
                 chart: {
                     type: 'line'
@@ -127,11 +167,25 @@ $('#correlationform').submit(function(event) {
                 series: [{
                     name: "Country1",
                     data: country1
-                },
+                } ,
                 {
                     name: "Country2",
                     data: country2
-                }]
+                }
+                ,
+                {
+                    name: "Country3",
+                    data: country3
+                },
+                {
+                    name: "Country4",
+                    data: country4
+                },
+                {
+                    name: "Country5",
+                    data: country5
+                }
+                ]
             });
         }
 
