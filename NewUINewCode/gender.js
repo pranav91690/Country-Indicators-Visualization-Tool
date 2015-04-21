@@ -13,7 +13,7 @@ var formData = {
     'country2'          : $('input[name=country2]').val(),
     'country3'          : $('input[name=country3]').val(),
     'country4'          : $('input[name=country4]').val(),
-    'country5'          : $('input[name=country5]').val(),
+    // 'country5'          : $('input[name=country5]').val(),
     'syear'             : $('input[name=syear]').val(),
     'eyear'             : $('input[name=eyear]').val(),
 };

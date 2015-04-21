@@ -33,7 +33,7 @@
                         <a href="index.html">Home</a>
                     </li>
                     <li>
-                        <a href="correlation.html">Correlation Analysis</a>
+                        <a href="correlationa.php">Correlation Analysis</a>
                     </li>
                     <li>
                         <a href="gender.html">Gender Based Analysis</a>
@@ -67,7 +67,7 @@
         </ul>
         <div class="tab-content">
             <div class="tab-pane fade in active" id="correlation">
-                <div class="col-md-12">
+                <div class="col-md-8 col-md-offset-2">
                     <h2>Country Based Analysis</h2>
                     <!-- OUR FORM -->
                     <form action="country.php" method="POST" id="countryform">
@@ -75,113 +75,11 @@
                             <!-- Indicator to Compare -->
                             <div id="ind-group" class="form-group">
                                 <!-- Topic -->
-                                <div class="col-md-2">
-                                    <label for="topic">Topic</label>
-                                    <select type="text" class="form-control input-medium" name="topic" id="topic1">
-                               
+                                <div class="col-md-4">
 
-                                    </select>
-                                </div>
-                                <div class="col-md-6">
-                                    <!-- Indicator - Make it Chained -->
-                                    <label for="indx">Indicator</label>
-                                    <select type="text" class="form-control input-medium" name="indx" id="indx">
-
-                                    </select>
-                                </div>
-                                <div class="col-md-2">
-                                    <label for="cond1">Condition</label>
-                                    <select type="text" class="form-control input-medium" name="cond1" id="cond1">
-                                        <option value="eq">Equals</option>
-                                        <option value="lt">Less Than</option>
-                                        <option value="le">Less Than Equals</option>
-                                        <option value="gt">Greater Than</option>
-                                        <option value="ge">Greater Than Equals</option>
-                                        <option value="ne">Not Equals</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-2">
-                                    <label for="value1">Value</label>
-                                    <input type="text" class="form-control" name="value1" id="value1">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div id="ind-group" class="form-group">
-                                <!-- Topic -->
-                                <div class="col-md-2">
-                                    <label for="topic">Topic</label>
-                                    <select type="text" class="form-control input-medium" name="topic" id="topic2">
-
-                                    </select>
-                                </div>
-                                <div class="col-md-6">
-                                    <!-- Indicator - Make it Chained -->
-                                    <label for="indx">Indicator</label>
-                                    <select type="text" class="form-control input-medium" name="indx" id="indx">
-
-                                    </select>
-                                </div>
-                                <div class="col-md-2">
-                                    <label for="cond1">Condition</label>
-                                    <select type="text" class="form-control input-medium" name="cond1" id="cond1">
-                                        <option value="eq">Equals</option>
-                                        <option value="lt">Less Than</option>
-                                        <option value="le">Less Than Equals</option>
-                                        <option value="gt">Greater Than</option>
-                                        <option value="ge">Greater Than Equals</option>
-                                        <option value="ne">Not Equals</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-2">
-                                    <label for="value1">Value</label>
-                                    <input type="text" class="form-control" name="value1" id="value1">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div id="ind-group" class="form-group">
-                                <!-- Topic -->
-                                <div class="col-md-2">
-                                    <label for="topic">Topic</label>
-                                    <select type="text" class="form-control input-medium" name="topic" id="topic3">
-
-                                    </select>
-                                </div>
-                                <div class="col-md-6">
-                                    <!-- Indicator - Make it Chained -->
-                                    <label for="indx">Indicator</label>
-                                    <select type="text" class="form-control input-medium" name="indx" id="indx">
-
-                                    </select>
-                                </div>
-                                <div class="col-md-2">
-                                    <label for="cond1">Condition</label>
-                                    <select type="text" class="form-control input-medium" name="cond1" id="cond1">
-                                        <option value="eq">Equals</option>
-                                        <option value="lt">Less Than</option>
-                                        <option value="le">Less Than Equals</option>
-                                        <option value="gt">Greater Than</option>
-                                        <option value="ge">Greater Than Equals</option>
-                                        <option value="ne">Not Equals</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-2">
-                                    <label for="value1">Value</label>
-                                    <input type="text" class="form-control" name="value1" id="value1">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div id="ind-group" class="form-group">
-                                <!-- Topic -->
-                                <div class="col-md-2">
-                                    <label for="topic">Topic</label>
-                                    <select type="text" class="form-control input-medium" name="topic" id="topic4">
-                                              <?php
+                                    <label for="topic1">Please select Topic</label>
+                                    <select type="text" onchange="doGo('topic1', 'ind1')" class="form-control input-medium" name="topic1" id="topic1">
+                                 <?php
                               $dbstr1 ="(DESCRIPTION =(ADDRESS = (PROTOCOL = TCP)(HOST = oracle.cise.ufl.edu)(PORT = 1521)) 
                                     (CONNECT_DATA = 
                                         (SERVER = DEDICATED) 
@@ -196,20 +94,20 @@
                                 else {
                                   $STATEMENT = oci_parse($conn,"SELECT * from TOPICS");
                                 oci_execute($STATEMENT);
-
-                                 $nrows = oci_fetch_all($STATEMENT, $res);
-
-                                 for($x = 0; $x <= $nrows; $x++)
-                                  {   
-                                 echo '<option value="'.$res['CODE']. '\>' .$res['SHORT_NAME'] . '</option>';                                     
+                                echo '<option value="SEL">Select</option>'; 
+                              
+                                while( ($res = oci_fetch_array($STATEMENT))) {
+                                 
+                                 echo '<option value="'.$res['CODE']. '"\>' .$res['SHORT_NAME'] . '</option>';                                     
                                             }     }  
                                             ?>  
-                                    </select>
+                                 </select>                              
+
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <!-- Indicator - Make it Chained -->
-                                    <label for="indx">Indicator</label>
-                                    <select type="text" class="form-control input-medium" name="indx" id="indx">
+                                    <label for="ind1">Indicator</label>
+                                    <select type="text" class="form-control input-medium" name="ind1" id="ind1">
 
                                     </select>
                                 </div>
@@ -225,15 +123,141 @@
                                     </select>
                                 </div>
                                 <div class="col-md-2">
-                                    <label for="value1">Value</label>
-                                    <input type="text" class="form-control" name="value1" id="value1">
+                                    <label for="val1">Value</label>
+                                    <input type="text" class="form-control" name="val1" id="val1">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div id="ind-group" class="form-group">
+                                <!-- Topic -->
+                                <div class="col-md-4">
+                                    <label for="topic2">Please select Topic</label>
+                                    <select type="text" onchange="doGo('topic2', 'ind2')" class="form-control input-medium" name="topic2" id="topic2">
+                                <?php
+                                 oci_execute($STATEMENT);
+                                 echo '<option value="SEL">Select</option>'; 
+                                while( ($res = oci_fetch_array($STATEMENT)) != false) {
+                                 
+                                 echo '<option value="'.$res['CODE']. '"\>' .$res['SHORT_NAME'] . '</option>';                                     
+                                            }     
+                                            ?>  
+                                    </select>
+
+                                </div>
+                                <div class="col-md-4">
+                                    <!-- Indicator - Make it Chained -->
+                                    <label for="ind2">Indicator</label>
+                                    <select type="text" class="form-control input-medium" name="ind2" id="ind2">
+
+                                    </select>
+                                </div>
+                                <div class="col-md-2">
+                                    <label for="cond2">Condition</label>
+                                    <select type="text" class="form-control input-medium" name="cond2" id="cond2">
+                                        <option value="eq">Equals</option>
+                                        <option value="lt">Less Than</option>
+                                        <option value="le">Less Than Equals</option>
+                                        <option value="gt">Greater Than</option>
+                                        <option value="ge">Greater Than Equals</option>
+                                        <option value="ne">Not Equals</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-2">
+                                    <label for="val2">Value</label>
+                                    <input type="text" class="form-control" name="val2" id="val2">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div id="ind-group" class="form-group">
+                                <!-- Topic -->
+                                <div class="col-md-4">
+                                    <label for="topic3">Please select Topic</label>
+                                    <select type="text" onchange="doGo('topic3', 'ind3')" class="form-control input-medium" name="topic3" id="topic3">
+                                         <?php
+                                          oci_execute($STATEMENT);
+                                          echo '<option value="SEL">Select</option>'; 
+                                while( ($res = oci_fetch_array($STATEMENT)) != false) {
+                                 
+                                 echo '<option value="'.$res['CODE']. '"\>' .$res['SHORT_NAME'] . '</option>';                                     
+                                            }      
+                                            ?>  
+                                    </select>
+
+                                </div>
+                                <div class="col-md-4">
+                                    <!-- Indicator - Make it Chained -->
+                                    <label for="ind3">Indicator</label>
+                                    <select type="text" class="form-control input-medium" name="ind3" id="ind3">
+
+                                    </select>
+                                </div>
+                                <div class="col-md-2">
+                                    <label for="cond3">Condition</label>
+                                    <select type="text" class="form-control input-medium" name="cond3" id="cond3">
+                                        <option value="eq">Equals</option>
+                                        <option value="lt">Less Than</option>
+                                        <option value="le">Less Than Equals</option>
+                                        <option value="gt">Greater Than</option>
+                                        <option value="ge">Greater Than Equals</option>
+                                        <option value="ne">Not Equals</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-2">
+                                    <label for="val3">Value</label>
+                                    <input type="text" class="form-control" name="val3" id="val3">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div id="ind-group" class="form-group">
+                                <!-- Topic -->
+                                <div class="col-md-4">
+                                    <label for="topic4">Please select Topic</label>
+                                    <select type="text" onchange="doGo('topic4', 'ind4')" class="form-control input-medium" name="topic4" id="topic4">
+                                         <?php
+                                          oci_execute($STATEMENT);
+                                          echo '<option value="SEL">Select</option>'; 
+                               while( ($res = oci_fetch_array($STATEMENT)) != false) {
+                                 
+                                 echo '<option value="'.$res['CODE']. '"\>' .$res['SHORT_NAME'] . '</option>';                                     
+                                            }      
+                                            ?>  
+
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <!-- Indicator - Make it Chained -->
+                                    <label for="ind4">Indicator</label>
+                                    <select type="text" class="form-control input-medium" name="ind4" id="ind4">
+
+                                    </select>
+                                </div>
+                                <div class="col-md-2">
+                                    <label for="cond4">Condition</label>
+                                    <select type="text" class="form-control input-medium" name="cond4" id="cond4">
+                                        <option value="eq">Equals</option>
+                                        <option value="lt">Less Than</option>
+                                        <option value="le">Less Than Equals</option>
+                                        <option value="gt">Greater Than</option>
+                                        <option value="ge">Greater Than Equals</option>
+                                        <option value="ne">Not Equals</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-2">
+                                    <label for="val4">Value</label>
+                                    <input type="text" class="form-control" name="val4" id="val4">
                                 </div>
                             </div>
                         </div>
 
                         <div id="year-group" class="form-group">
-                            <label for="year">Year</label>
-                            <select type="text" class="form-control" name="syear" id="year">
+                            <label for="syear">Year</label>
+                            <select type="text" class="form-control" name="syear" id="syear">
                                 <option value="1995">1995</option>
                                 <option value="1996">1996</option>
                                 <option value="1997">1997</option>
@@ -258,10 +282,8 @@
                             </select>
                             <!-- errors will go here -->
                         </div>
-                        <div class="form-group">
-                            <p> The results will be limited to 5 countries </p>
-                        </div>
-                        <button type="submit" class="btn btn-success">Submit <span class="fa fa-arrow-right"></span></button>
+                        <button type="submit" class="btn btn-success" >Submit <span class="fa fa-arrow-right"></span></button>
+
                     </form>
                 </div> 
                 <div class="row">
@@ -287,7 +309,8 @@
     <script src="js/bootstrap.min.js"></script>
 
     <script src="country.js"></script> <!-- load our javascript file -->
-    <script src="jquery.chained.js"></script>
+     
+    
     <!-- HighCharts Charting Framework -->
     <script src="http://code.highcharts.com/highcharts.js"></script>
 </body>

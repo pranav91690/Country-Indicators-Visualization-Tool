@@ -1,33 +1,107 @@
 // country.js
-$(document).ready(function() {
+function doGo(did, id){
+    // alert(id);
+      // alert(did);
+      var dropdown = document.getElementById(did);
+      var selectedValue = dropdown.options[dropdown.selectedIndex].value;
+    // alert(selectedValue);
+
+    $.ajax({
+    type        : 'POST', // define the type of HTTP verb we want to use (POST for our form)
+    url         : 'populate.php', // the url where we want to POST
+    data        : ({topic1 : selectedValue}), // our data object
+    dataType    : 'json', // what type of data do we expect back from the server
+    encode      : true,
+    success     : function(data)
+    {
+                       // alert("success");
+                       // alert(JSON.stringify(data));
+                        // alert(data.actualdata.length);
+                        
+                    }
+                }).done(function( data ) {
+
+  // alert("Inside done");
+
+
+  var select = document.getElementById(id);
+
+  for(var i=select.options.length-1; i>=0; i--)
+  {
+    select.remove(i);
+}
+
+for(var i = 0; i < data.actualdata.length; i++) {
+    var opt = document.createElement("option");
+   // alert(data.actualdata[i].code);
+   opt.value = data.actualdata[i].code;
+   opt.text = data.actualdata[i].name;
+   select.add(opt);
+}
+});
+
+            }
+
+
+
+
+            $(document).ready(function() {
+
 
 // process the Corellation Form
 $('#countryform').submit(function(event) {
+
+ // alert("Submitted");
 // Putting the Form Data in in a variable
 var formData = {
-    'topic1'            : $('input[name=topic1]').val(),
-    'indx'              : $('input[name=indx]').val(),
-    'topic2'            : $('input[name=topic2]').val(),
-    'indy'              : $('input[name=indy]').val(),
-    'country1'          : $('input[name=country1]').val(),
-    'country2'          : $('input[name=country2]').val(),
-    'country3'          : $('input[name=country3]').val(),
-    'country4'          : $('input[name=country4]').val(),
-    'country5'          : $('input[name=country5]').val(),
-    'syear'             : $('input[name=syear]').val(),
-    'eyear'             : $('input[name=eyear]').val(),
+    'topic1'            : $('#topic1').val(),
+    'ind1'              : $('#ind1').val(),
+    'cond1'             : $('#cond1').val(),
+    'val1'              : $('#val1').val(),
+    'topic2'            : $('#topic2').val(),
+    'ind2'              : $('#ind2').val(),
+    'cond2'             : $('#cond2').val(),
+    'val2'              : $('#val2').val(),
+    'topic3'            : $('#topic3').val(),
+    'ind3'              : $('#ind3').val(),
+    'cond3'             : $('#cond3').val(),
+    'val3'              : $('#val3').val(),
+    'topic4'            : $('#topic4').val(),
+    'ind4'              : $('#ind4').val(),
+    'cond4'             : $('#cond4').val(),
+    'val4'              : $('#val4').val(),
+    'syear'             : $('#syear').val(),
 };
+// alert (formData);
 
 // process the form
 $.ajax({
     type        : 'POST', // define the type of HTTP verb we want to use (POST for our form)
-    url         : 'gender.php', // the url where we want to POST
+    url         : 'country.php', // the url where we want to POST
     data        : formData, // our data object
     dataType    : 'json', // what type of data do we expect back from the server
     encode      : true
-})
-    // using the done promise callback
-    .done(function(data) {
+
+}).done(function(data) {
+        alert("done");
+        alert(JSON.stringify(data));
+
+
+
+/*for(var i = 0; i < data.actualdata.length; i++) {
+
+   // alert(data.actualdata[i].code);
+   opt.value = data.actualdata[i].code;
+   opt.text = data.actualdata[i].name;
+   select.add(opt);
+}*/
+
+
+
+//  for indicator 1
+// list of countries on x axis
+// 
+
     // Indicator 1
     $('#inddiv1').highcharts({
         chart: {
@@ -41,18 +115,19 @@ $.ajax({
         },
         xAxis: {
             categories: [
-                'Jan',
-                'Feb',
-                'Mar',
-                'Apr',
-                'May',
-                'Jun',
-                'Jul',
-                'Aug',
-                'Sep',
-                'Oct',
-                'Nov',
-                'Dec'
+            // list of countries
+            'Jan',
+            'Feb',
+            'Mar',
+            'Apr',
+            'May',
+            'Jun',
+            'Jul',
+            'Aug',
+            'Sep',
+            'Oct',
+            'Nov',
+            'Dec'
             ],
             crosshair: true
         },
@@ -65,7 +140,7 @@ $.ajax({
         tooltip: {
             headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
             pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-                '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+            '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
             footerFormat: '</table>',
             shared: true,
             useHTML: true
@@ -77,6 +152,7 @@ $.ajax({
             }
         },
         series: [{
+            // name of country , and list of data
             name: 'Tokyo',
             data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]
 
@@ -108,18 +184,18 @@ $.ajax({
         },
         xAxis: {
             categories: [
-                'Jan',
-                'Feb',
-                'Mar',
-                'Apr',
-                'May',
-                'Jun',
-                'Jul',
-                'Aug',
-                'Sep',
-                'Oct',
-                'Nov',
-                'Dec'
+            'Jan',
+            'Feb',
+            'Mar',
+            'Apr',
+            'May',
+            'Jun',
+            'Jul',
+            'Aug',
+            'Sep',
+            'Oct',
+            'Nov',
+            'Dec'
             ],
             crosshair: true
         },
@@ -132,7 +208,7 @@ $.ajax({
         tooltip: {
             headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
             pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-                '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+            '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
             footerFormat: '</table>',
             shared: true,
             useHTML: true
@@ -161,7 +237,7 @@ $.ajax({
 
         }]
     });
-    
+
     // Indicator3
     $('#inddiv3').highcharts({
         chart: {
@@ -175,18 +251,18 @@ $.ajax({
         },
         xAxis: {
             categories: [
-                'Jan',
-                'Feb',
-                'Mar',
-                'Apr',
-                'May',
-                'Jun',
-                'Jul',
-                'Aug',
-                'Sep',
-                'Oct',
-                'Nov',
-                'Dec'
+            'Jan',
+            'Feb',
+            'Mar',
+            'Apr',
+            'May',
+            'Jun',
+            'Jul',
+            'Aug',
+            'Sep',
+            'Oct',
+            'Nov',
+            'Dec'
             ],
             crosshair: true
         },
@@ -199,7 +275,7 @@ $.ajax({
         tooltip: {
             headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
             pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-                '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+            '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
             footerFormat: '</table>',
             shared: true,
             useHTML: true
@@ -242,18 +318,18 @@ $.ajax({
         },
         xAxis: {
             categories: [
-                'Jan',
-                'Feb',
-                'Mar',
-                'Apr',
-                'May',
-                'Jun',
-                'Jul',
-                'Aug',
-                'Sep',
-                'Oct',
-                'Nov',
-                'Dec'
+            'Jan',
+            'Feb',
+            'Mar',
+            'Apr',
+            'May',
+            'Jun',
+            'Jul',
+            'Aug',
+            'Sep',
+            'Oct',
+            'Nov',
+            'Dec'
             ],
             crosshair: true
         },
@@ -266,7 +342,7 @@ $.ajax({
         tooltip: {
             headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
             pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-                '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+            '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
             footerFormat: '</table>',
             shared: true,
             useHTML: true
