@@ -67,7 +67,7 @@
         </ul>
         <div class="tab-content">
             <div class="tab-pane fade in active" id="correlation">
-                <div class="col-md-8 col-md-offset-2">
+                <div class="col-md-12">
                     <h2>Gender Based Analysis</h2>
                     <!-- OUR FORM -->
                     <form action="gender.php" method="POST" id="genderform">
@@ -81,7 +81,7 @@
 
                                     </select>
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-md-6">
                                     <!-- Indicator - Make it Chained -->
                                     <label for="indx">Indicator</label>
                                     <select type="text" class="form-control input-medium" name="indx" id="indx">
@@ -92,41 +92,43 @@
                         </div>
 
                         <!-- Country1 -->
-                        <div id="country-group" class="form-group">
+                        <div class="row">
+                        <div id="country-group" class="form-group col-md-5">
                             <label for="country1">Country1</label>
                             <select type="text" class="form-control" name="country1" id="country1">
                             </select>
                             <!-- errors will go here -->
                         </div>
 
-                        <div id="country-group" class="form-group">
+                        <div id="country-group" class="form-group col-md-5">
                             <label for="country2">Country2</label>
                             <select type="text" class="form-control" name="country2" id="country2">
                             </select>
                             <!-- errors will go here -->
                         </div>
-
-                        <div id="country-group" class="form-group">
+                        </div>
+                        <div class="row">
+                        <div id="country-group" class="form-group col-md-5">
                             <label for="country3">Country3</label>
                             <select type="text" class="form-control" name="country3" id="country3">
                             </select>
                             <!-- errors will go here -->
                         </div>
 
-                        <div id="country-group" class="form-group">
+                        <div id="country-group" class="form-group col-md-5">
                             <label for="country4">Country4</label>
                             <select type="text" class="form-control" name="country4" id="country4">
                             </select>
                             <!-- errors will go here -->
                         </div>
+                        </div>
 
-
-                        <div id="country-group" class="form-group">
+<!--                         <div id="country-group" class="form-group">
                             <label for="country5">Country5</label>
                             <select type="text" class="form-control" name="country5" id="country5">
-                            </select>
+                            </select> -->
                             <!-- errors will go here -->
-                        </div>
+                        <!-- </div> -->
 
                         <div id="year-group" class="form-group">
                             <label for="year">Year</label>
@@ -158,7 +160,7 @@
                         <button type="submit" class="btn btn-success">Submit <span class="fa fa-arrow-right"></span></button>
                     </form>
                 </div> 
-                <div class="col-md-8 col-md-offset-2" id="ajax"></div>
+                <div class="col-md-8" id="ajax"></div>
             </div>
             <div class="tab-pane fade" id="example1">
                 <div>This is where the example content will be</div>
