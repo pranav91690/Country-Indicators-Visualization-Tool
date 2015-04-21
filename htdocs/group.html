@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <title>Look I'm AJAXing!</title>
+
+    <style>
+    body{
+      min-height: 2000px;
+      padding-top: 70px;
+  }
+  </style>
+</head>
+<body>
+    <!-- Fixed Nav Bar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="index.html">Dbms Project</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="correlation.html">Correlation Analysis</a>
+                    </li>
+                    <li>
+                        <a href="gender.html">Gender Based Analysis</a>
+                    </li>
+                    <li>
+                        <a href="country.html">Country Based Analysis</a>
+                    </li>
+                    <li class="active">
+                        <a href=''>Group Based Analysis</a>
+                    </li>
+                    <li>
+                        <a href='adddata.html'>Add Data</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <ul class="nav nav-tabs" data-tabs="tabs">
+            <li class="active">
+                <a data-toggle="tab" href="#correlation" id="correlationtab">
+                    Execute
+                </a>
+            </li>
+            <li>
+                <a data-toggle="tab" href="#example1" id="example1tab">
+                    Example
+                </a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane fade in active" id="correlation">
+                <div class="col-md-8 col-md-offset-2">
+                    <h2>Group Analysis</h2>
+                    <!-- OUR FORM -->
+                </div> 
+                <div class="col-md-8 col-md-offset-2" id="ajax"></div>
+            </div>
+            <div class="tab-pane fade" id="example1">
+                <div>This is where the example content will be</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <script src="correlation.js"></script> <!-- load our javascript file -->
+    <script src="jquery.chained.js"></script>
+    <!-- HighCharts Charting Framework -->
+    <script src="http://code.highcharts.com/highcharts.js"></script>
+</body>
+</html>
